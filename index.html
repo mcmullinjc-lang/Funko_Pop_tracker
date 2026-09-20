@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Funko Pop Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🎀 Funko Pop Checklist</h1>
+    <p>Track what you've got and what you still need!</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="num" id="statTotal">0</div><div class="label">Total</div></div>
+    <div class="stat owned"><div class="num" id="statOwned">0</div><div class="label">Owned</div></div>
+    <div class="stat missing"><div class="num" id="statMissing">0</div><div class="label">Missing</div></div>
+  </div>
+  <div class="progress-bar"><div id="progressFill" style="width:0%"></div></div>
+
+  <div class="folder-tabs" id="folderTabs"></div>
+
+  <form class="add-folder-bar" id="addFolderForm">
+    <input type="text" id="newFolderInput" placeholder="New folder name (e.g. Marvel, Chase Variants)">
+    <button type="submit">+ Add Folder</button>
+  </form>
+
+  <form class="add-form" id="addForm">
+    <label class="photo-btn" id="addPhotoBtn" title="Add a photo">
+      <span id="addPhotoIcon">📷</span>
+      <input type="file" accept="image/*" id="addPhotoInput">
+    </label>
+    <input type="text" name="name" placeholder="Pop name (e.g. Venom)" required>
+    <input type="text" name="series" placeholder="Series">
+    <input type="text" name="number" placeholder="#">
+    <input type="text" name="tags" placeholder="Tags (Chase, Exclusive...)">
+    <select name="folder" id="folderSelect">
+      <option value="">No folder</option>
+    </select>
+    <button type="submit" class="btn-primary">Add ✨</button>
+  </form>
+
+  <div class="controls">
+    <div class="filters" id="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="owned">Owned</button>
+      <button data-filter="missing">Missing</button>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search...">
+    </div>
+  </div>
+
+  <ul class="list" id="list"></ul>
+  <div class="empty" id="emptyState" style="display:none;">No pops yet — add your first one above! 🌸</div>
+
+  <footer>Saved automatically in this browser 💾</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
